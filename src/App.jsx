@@ -8,7 +8,7 @@ import sampleData from './data/sampleData.json';
 
 function App() {
   const [conversations, setConversations] = useState(() => {
-    const savedConversations = JSON.parse(localStorage.getItem('conversations')) || [];
+    const savedConversations = JSON.parse(localStorage.getItem('pastConversations')) || [];
     return savedConversations;
   });
   const [currentChat, setCurrentChat] = useState([]);
@@ -22,7 +22,7 @@ function App() {
       };
       const updatedConversations = [...conversations, newConversation];
       setConversations(updatedConversations);
-      localStorage.setItem('conversations', JSON.stringify(updatedConversations));
+      localStorage.setItem('pastConversations', JSON.stringify(updatedConversations));
       setCurrentChat([]);
     }
   };
