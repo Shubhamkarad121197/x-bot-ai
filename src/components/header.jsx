@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="nav-group">
-        <span className="app-title">FDT CODE-A-THON Week 4</span>
+        <span className="app-title">Bot AI</span>
       </div>
       <nav className="nav-links">
         <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
