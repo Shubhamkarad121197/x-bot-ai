@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import ChatPage from './components/chatPage';
@@ -7,13 +7,11 @@ import './App.css';
 import sampleData from './data/sampleData.json';
 
 function App() {
-  const [conversations, setConversations] = useState([]);
-  const [currentChat, setCurrentChat] = useState([]);
-
-  useEffect(() => {
+  const [conversations, setConversations] = useState(() => {
     const savedConversations = JSON.parse(localStorage.getItem('conversations')) || [];
-    setConversations(savedConversations);
-  }, []);
+    return savedConversations;
+  });
+  const [currentChat, setCurrentChat] = useState([]);
 
   const saveConversation = (chat, rating, feedback) => {
     if (chat.length > 0) {
