@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Message from './message';
 
 const HistoryPage = ({ conversations }) => {
-  // Auto-select the latest conversation on load
   const [selectedChat, setSelectedChat] = useState(null);
 
+  // Auto-select latest conversation whenever conversations change
   useEffect(() => {
-    if (conversations.length > 0) {
+    if (conversations && conversations.length > 0) {
       setSelectedChat(conversations[conversations.length - 1]);
     }
   }, [conversations]);
@@ -57,13 +57,13 @@ const HistoryPage = ({ conversations }) => {
                 {[...Array(5)].map((_, index) => (
                   <span
                     key={index}
-                    className={`star ${index < selectedChat.feedback.rating ? 'filled' : ''}`}
+                    className={`star ${index < (selectedChat.feedback?.rating || 0) ? 'filled' : ''}`}
                   >
                     ★
                   </span>
                 ))}
               </div>
-              <p>{selectedChat.feedback.subjective}</p>
+              <p>{selectedChat.feedback?.subjective || ''}</p>
             </div>
           </>
         ) : (
