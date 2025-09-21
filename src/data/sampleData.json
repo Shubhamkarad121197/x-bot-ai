@@ -26,11 +26,15 @@
     },
     {
       "query": "what is machine learning?",
-      "response": "Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms that allow computers to learn from and make predictions or decisions based on data. "
+      "response": "Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms that allow computers to learn from and make predictions or decisions based on data. [Image of a neural network diagram]"
     },
     {
       "query": "what is your name?",
       "response": "I am a helpful AI assistant. You can call me Soul AI."
+    },
+    {
+      "query": "what is a restful api?",
+      "response": "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol."
     }
   ],
   "conversationHistory": []

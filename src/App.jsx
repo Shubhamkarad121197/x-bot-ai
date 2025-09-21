@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Header from './components/header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
 import ChatPage from './components/chatPage';
-import HistoryPage from './components/historyPage';
+import HistoryPage from './components/HistoryPage';
 import './App.css';
 import sampleData from './data/sampleData.json';
 
