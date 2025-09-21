@@ -8,12 +8,12 @@ import sampleData from './data/sampleData.json';
 
 function App() {
   const [conversations, setConversations] = useState(() => {
-    const savedConversations = JSON.parse(localStorage.getItem('pastConversations')) || [];
-    return savedConversations;
+    const saved = JSON.parse(localStorage.getItem('pastConversations')) || [];
+    return saved;
   });
   const [currentChat, setCurrentChat] = useState([]);
 
-  const saveConversation = (chat, rating, feedback) => {
+  const saveConversation = (chat, rating = null, feedback = '') => {
     if (chat.length > 0) {
       const newConversation = {
         id: Date.now(),
