@@ -6,23 +6,21 @@ const HistoryPage = ({ conversations }) => {
 
   // Auto-select latest conversation whenever conversations change
   useEffect(() => {
-    if (conversations && conversations.length > 0) {
+    if (conversations.length > 0) {
       setSelectedChat(conversations[conversations.length - 1]);
     }
   }, [conversations]);
 
-  const handleSelectChat = (chat) => {
-    setSelectedChat(chat);
-  };
+  const handleSelectChat = (chat) => setSelectedChat(chat);
 
   return (
     <div className="history-container">
-      {/* Sidebar with conversation list */}
+      {/* Sidebar */}
       <div className="sidebar">
         <h2>Conversation History</h2>
         {conversations.length > 0 ? (
           <ul className="history-list">
-            {conversations.map((chat) => (
+            {conversations.map(chat => (
               <li
                 key={chat.id}
                 className={`history-item ${selectedChat?.id === chat.id ? 'active' : ''}`}
@@ -40,24 +38,24 @@ const HistoryPage = ({ conversations }) => {
         )}
       </div>
 
-      {/* Chat display area */}
+      {/* Chat display */}
       <div className="chat-display">
         {selectedChat ? (
           <>
             <div className="chat-messages">
-              {selectedChat.messages.map((msg, index) => (
-                <Message key={index} message={msg} />
+              {selectedChat.messages.map((msg, idx) => (
+                <Message key={idx} message={msg} />
               ))}
             </div>
 
-            {/* Feedback section */}
+            {/* Feedback */}
             <div className="feedback-display">
               <h3>Feedback</h3>
               <div className="star-rating">
-                {[...Array(5)].map((_, index) => (
+                {[...Array(5)].map((_, idx) => (
                   <span
-                    key={index}
-                    className={`star ${index < (selectedChat.feedback?.rating || 0) ? 'filled' : ''}`}
+                    key={idx}
+                    className={`star ${idx < (selectedChat.feedback?.rating || 0) ? 'filled' : ''}`}
                   >
                     ★
                   </span>
