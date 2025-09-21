@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Message from './message';
 
 const HistoryPage = ({ conversations }) => {
+  // Auto-select the latest conversation on load
   const [selectedChat, setSelectedChat] = useState(null);
+
+  useEffect(() => {
+    if (conversations.length > 0) {
+      setSelectedChat(conversations[conversations.length - 1]);
+    }
+  }, [conversations]);
 
   const handleSelectChat = (chat) => {
     setSelectedChat(chat);
@@ -10,6 +17,7 @@ const HistoryPage = ({ conversations }) => {
 
   return (
     <div className="history-container">
+      {/* Sidebar with conversation list */}
       <div className="sidebar">
         <h2>Conversation History</h2>
         {conversations.length > 0 ? (
@@ -31,6 +39,8 @@ const HistoryPage = ({ conversations }) => {
           <p className="no-history-message">No saved conversations yet.</p>
         )}
       </div>
+
+      {/* Chat display area */}
       <div className="chat-display">
         {selectedChat ? (
           <>
@@ -39,11 +49,18 @@ const HistoryPage = ({ conversations }) => {
                 <Message key={index} message={msg} />
               ))}
             </div>
+
+            {/* Feedback section */}
             <div className="feedback-display">
               <h3>Feedback</h3>
               <div className="star-rating">
                 {[...Array(5)].map((_, index) => (
-                  <span key={index} className={`star ${index < selectedChat.feedback.rating ? 'filled' : ''}`}>★</span>
+                  <span
+                    key={index}
+                    className={`star ${index < selectedChat.feedback.rating ? 'filled' : ''}`}
+                  >
+                    ★
+                  </span>
                 ))}
               </div>
               <p>{selectedChat.feedback.subjective}</p>
