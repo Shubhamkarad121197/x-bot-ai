@@ -15,15 +15,10 @@ const Message = ({ message, onLikeDislike }) => {
       onMouseEnter={() => !isUser && setShowFeedback(true)}
       onMouseLeave={() => !isUser && setShowFeedback(false)}
     >
-     <div class="message-content">
-  <span class="ai-name">Soul AI</span>
-  <p class="message-text">
-    RESTful APIs are designed around the REST (Representational State Transfer) architecture, 
-    which uses HTTP requests to access and manipulate data. 
-    They follow a stateless, client-server, cacheable communications protocol.
-  </p>
-</div>
-
+      <div className="message-content">
+        {!isUser && <span className="ai-name">Soul AI</span>}
+        <p className="message-text">{message.text}</p>
+      </div>
       {!isUser && (
         <div className={`feedback-buttons ${showFeedback ? 'visible' : ''}`}>
           <button
