@@ -70,6 +70,7 @@ const ChatPage = ({ aiResponses, onSave, currentChat, setCurrentChat }) => {
               key={index}
               message={msg}
               onLikeDislike={(liked) => handleLikeDislike(index, liked)}
+              
             />
           ))}
           <div ref={chatEndRef} />
