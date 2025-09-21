@@ -1,0 +1,37 @@
+{
+  "aiResponses": [
+    {
+      "query": "hello, what is the weather?",
+      "response": "The weather today is sunny with a high of 25°C."
+    },
+    {
+      "query": "hi, what is my location?",
+      "response": "Your current location is Pimpri-Chinchwad, Maharashtra, India. "
+    },
+    {
+      "query": "hi, what's the temperature?",
+      "response": "The current temperature is 21°C. It feels cool with a gentle breeze."
+    },
+    {
+      "query": "hi, how are you?",
+      "response": "I'm doing well, thank you for asking! I'm here to assist you."
+    },
+    {
+      "query": "tell me a fun fact",
+      "response": "Did you know that a group of flamingos is called a 'flamboyance'?"
+    },
+    {
+      "query": "what is AI?",
+      "response": "AI, or Artificial Intelligence, refers to the simulation of human intelligence in machines that are programmed to think like humans and mimic their actions. The term may also be applied to any machine that exhibits traits associated with a human mind such as learning and problem-solving. "
+    },
+    {
+      "query": "what is machine learning?",
+      "response": "Machine learning is a subfield of artificial intelligence (AI) that focuses on the development of algorithms that allow computers to learn from and make predictions or decisions based on data. "
+    },
+    {
+      "query": "what is your name?",
+      "response": "I am a helpful AI assistant. You can call me Soul AI."
+    }
+  ],
+  "conversationHistory": []
+}
