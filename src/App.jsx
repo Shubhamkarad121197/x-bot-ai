@@ -39,7 +39,7 @@ function App() {
           <Routes>
             <Route path="/" element={
               <ChatPage
-                aiResponses={sampleData.aiResponses}
+                aiResponses={sampleData}
                 onSave={saveConversation}
                 currentChat={currentChat}
                 setCurrentChat={setCurrentChat}

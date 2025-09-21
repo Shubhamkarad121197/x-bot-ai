@@ -10,7 +10,7 @@ const ChatPage = ({ aiResponses, onSave, currentChat, setCurrentChat }) => {
   const getAIResponse = (query) => {
     const sanitizedQuery = query.toLowerCase().trim();
     const foundResponse = aiResponses.find(
-      (item) => sanitizedQuery.includes(item.query.toLowerCase())
+      (item) => sanitizedQuery.includes(item.question.toLowerCase())
     );
     return foundResponse ? foundResponse.response : 'Sorry, Did not understand your query!';
   };
