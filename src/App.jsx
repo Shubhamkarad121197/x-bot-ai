@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import ChatPage from './components/chatPage';
-import HistoryPage from './components/HistoryPage';
+import HistoryPage from './components/historyPage';
 import './App.css';
 import sampleData from './data/sampleData.json';
 
