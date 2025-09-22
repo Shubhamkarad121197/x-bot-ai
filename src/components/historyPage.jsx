@@ -44,7 +44,8 @@ const HistoryPage = ({ conversations }) => {
           <>
             <div className="chat-messages">
               {selectedChat.messages.map((msg, idx) => (
-                <Message key={idx} message={msg} />
+                // ✅ Pass dummy onLikeDislike so <Message /> renders consistently
+                <Message key={idx} message={msg} onLikeDislike={() => {}} />
               ))}
             </div>
 
